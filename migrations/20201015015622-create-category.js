@@ -18,8 +18,7 @@ module.exports = {
       },
       updatedAt: {
         type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: sequelize.fn('NOW') 
+        allowNull: false 
       }
     });
   },
