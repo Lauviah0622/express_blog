@@ -6,6 +6,7 @@ module.exports = {
       title: "關於我",
       content: "關於我",
       categoryId: 0,
+      
     }], {});
     await queryInterface.bulkInsert('Articles', [{
       title: "20/10/14",

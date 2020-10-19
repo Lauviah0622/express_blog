@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
     isDelete: DataTypes.BOOLEAN,
-    categoryId: DataTypes.INTEGER
+    categoryId: DataTypes.INTEGER,
+    
   }, {
     sequelize,
     modelName: 'Article',

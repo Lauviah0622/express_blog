@@ -19,7 +19,7 @@ module.exports = {
       updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.NOW
+        defaultValue: sequelize.fn('NOW') 
       }
     });
   },
