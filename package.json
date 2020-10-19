@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "web": "npx sequelize-cli db:migrate && npx sequelize-cli db:migrate && node app.js"
+    "web": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && node app.js"
   },
   "author": "",
   "license": "ISC",
