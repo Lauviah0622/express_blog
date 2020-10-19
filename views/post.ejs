@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-    include('modules/head', {
+        extra: `
+        <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
+        `
+    }) %>
+
+
+<body>
+    <div class="wrapper">
+        <%-    include('modules/header') %>
+
+        <main class="main">
+            <%-    include('modules/background') %>
+            <div class="posts">
+                <form action="/article<%- typeof id !== 'undefined' ? '/' + id : ''%>" 
+                method="POST" class="edit__form">
+                    <div>
+                        <h4>標題：</h4>
+                        <input type="text" name="title" value="<%- typeof article !== 'undefined' ? article.title : ''%>">
+                    </div>
+                    <div>
+                        <h4>分類：</h4>
+                        <select name="category">
+                            <% for (let category of categories) {%>
+                            <option value="<%= category.id %>" 
+                            <%= (typeof article !== 'undefined' && article.categoryId === category.id) ? "selected" : '' %>
+                                >
+                                <%= category.name %>
+                            </option>
+
+                            <% } %>
+                        </select>
+                        或者新分類：
+                        <input type="text" name="newCate">
+
+                    </div>
+                    <div>
+                        <h4>內文：</h4>
+                        <textarea name="content" id="editor">
+                            <%- typeof article !== 'undefined' ? article.content : ''%>
+                        </textarea>
+                    </div>
+                    <input type="submit" value="提交" />
+                </form>
+            </div>
+        </main>
+        <%-    include('modules/footer') %>
+    </div>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+</body>
+
+</html>

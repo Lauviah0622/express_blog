@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-    include('modules/head') %>
+
+
+<body>
+    <div class="wrapper">
+        <%-    include('modules/header') %>
+        <main class="main">
+            <%-    include('modules/background') %>
+
+            <div class="posts">
+                <div class="post">
+                    <h3 class="post__title">
+                        <%= article.title  %>
+                    </h3>
+                    <div class="post__content">
+                        <%- article.content %>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%-    include('modules/footer') %>
+
+    </div>
+</body>
+
+</html>

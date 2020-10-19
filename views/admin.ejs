@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-    include('modules/head') %>
+
+<body>
+    <div class="wrapper">
+        <%-    include('modules/header') %>
+        <!-- login is test -->
+        <main class="main">
+            <%-    include('modules/background') %>
+
+            <div class="posts">
+                <!-- test repeat -->
+                <% for (const article of articles) {%>
+                <div class="post post--editable">
+                    <h3 class="post__title ">
+                        <div class="article">
+                            <a href="/article/<%= article.id%>">
+                                <span>
+                                    <%= article.title%>
+                                </span>
+                            </a>
+                        </div>
+                        <div>
+                            <span>
+                                <%= article["Category.name"]%>
+                            </span>
+                            <span class="time"><%= article.createdAt.toLocaleString()%></span>
+                            <a href="/edit/<%= article.id%>">
+                                <span class="post__btn">
+                                    編輯
+                                </span>
+                            </a>
+                            <a href="delete/<%= article.id%>">
+                                <span class="post__btn">
+                                    刪除
+                                </span>
+                            </a>
+                        </div>
+                    </h3>
+                </div>
+                <% } %>
+            </div>
+        </main>
+        <%-    include('modules/footer') %>
+    </div>
+</body>
+
+</html>

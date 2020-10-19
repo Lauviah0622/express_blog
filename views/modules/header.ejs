@@ -1,0 +1,42 @@
+<header class="header">
+    <nav class="header__left">
+        <a href="/">
+            <div class="header__logo">
+                Big Guy is John
+            </div>
+        </a>
+        <ul class="header__page-menu menu">
+            <a href="/categories">
+                <li>分類列表</li>
+            </a>
+            <a href="/about">
+                <li>關於我</li>
+            </a>
+
+        </ul>
+    </nav>
+    <div class="header__right">
+        <% if (login) { %>
+            <ul class="header__page-menu menu">
+                <a href="/admin">
+                    <li>後台管理</li>
+                </a>
+                <a href="/add">
+                    <li>新增文章</li>
+                </a>
+                <a href="/logout">
+                    <li>登出</li>
+                </a>
+    
+            </ul>
+        <% } else { %>
+        <form action="/login" method="POST" class="login">
+            帳號
+            <input type="text" name="username">
+            密碼
+            <input type="password" name="password" id="">
+            <input type="submit" value="登入">
+        </form>
+        <% } %>
+    </div>
+</header>
