@@ -1,25 +1,11 @@
 {
   "development": {
-    "username": "lauviah",
-    "password": "lauviah",
-    "database": "test_blog",
-    "host": "127.0.0.1",
-    "dialect": "mariadb"
+    "use_env_variable": "DB_DEV"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "use_env_variable": "DB_TEST"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "use_env_variable": "CLEARDB_DATABASE_URL"
+    "use_env_variable": "DB_PROD"
   }
 }
-

@@ -16,6 +16,7 @@ module.exports = {
             include: Category,
             raw: true
         })
+        
         res.render('index', {articles: dataArticles})
     },
     about: async (req, res) => {

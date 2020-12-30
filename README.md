@@ -41,15 +41,7 @@ npx sequelize-cli model:generate --name Category --attributes name:string
 ## middleware
 - checkstatus
 
-
-
-
-
-- [x] view
-- [x] router
-- [x] api
-- [] model
-- [] login
-- [] err handle
+TODO: 1. 新增帳號密碼功能
+TODO: 2. 
 
 
