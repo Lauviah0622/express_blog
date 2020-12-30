@@ -4,6 +4,7 @@ const router = require('./routers');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
+require('dotenv').config();
 
 const port = process.env.PORT || 5501;
 
