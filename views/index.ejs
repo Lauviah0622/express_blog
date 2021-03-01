@@ -27,7 +27,7 @@
                             <span class="time"><%= article.createdAt.toLocaleString() %></span>
                         </div>
                         <div class="post__content">
-                            <%- article.content %>
+                            <%- article.content.slice(0, 200)%>
                         </div>
                         <a href="article/<%= article.id %>">
                             <div class="post__readmore">

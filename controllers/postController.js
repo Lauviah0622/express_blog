@@ -6,11 +6,12 @@ module.exports = {
     add: async (req, res) => {
         let {title, content, category: categoryId, newCate} = req.body;
         let newCateId = null;
+        console.log(req.body);
         if (newCate) {
+            console.log('new cate!!!!');
             newCateData = await Category.create({name: newCate});
-            // 這裡是不是只能用 var？ 
+            newCateId = newCateData.dataValues.id
         }
-        newCateId = newCateData.dataValues.id
 
         await Article.create({title, content, categoryId: newCateId || categoryId })
         res.redirect('/admin');
@@ -28,7 +29,8 @@ module.exports = {
     },
     delete: async (req, res) => {
         const id = req.params.id;
-        await Article.update({idDelete: false}, {
+        console.log('delete!!!!');
+        await Article.update({isDelete: true}, {
             where: {id}
         })
         res.redirect('/admin');

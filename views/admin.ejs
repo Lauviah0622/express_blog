@@ -16,11 +16,18 @@
                 <div class="post post--editable">
                     <h3 class="post__title ">
                         <div class="article">
-                            <a href="/article/<%= article.id%>">
+                            <%  if (article.id === 1) { %>
+                                <span>
+                                    <%= article.title%>
+                                </span>
+                            
+                            <% } else { %>
+                            <a href="/article/ <%= article.id %>">
                                 <span>
                                     <%= article.title%>
                                 </span>
                             </a>
+                            <% }%>
                         </div>
                         <div>
                             <span>

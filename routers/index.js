@@ -7,7 +7,6 @@ const userController = require('../controllers/userController');
 
 const isLogin = (req, res, next) => {
     if (!req.session.login) {
-        res.send('get the fuck off!!!');
         res.redirect('/')
         res.end();
         return 
