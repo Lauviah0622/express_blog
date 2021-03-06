@@ -1,0 +1,3 @@
+DB_PROD=mysql:[usename]:[password]@[ip]:[port]/[dbname]
+DB_TEST=
+DB_DEV=

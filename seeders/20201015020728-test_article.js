@@ -25,12 +25,7 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       }], {});
-      await queryInterface.bulkInsert('Categories', [{
-        id: 1,
-        name: "日記",
-        createdAt: new Date(),
-        updatedAt: new Date()
-      }], {});
+      
     } catch (err) {
       console.log(err)
     }
